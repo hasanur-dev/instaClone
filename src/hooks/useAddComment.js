@@ -6,7 +6,6 @@ export default function useAddComment() {
   const { mutate: addComment, isPending: isLoading } = useMutation({
     mutationFn: addCommentApi,
     onSuccess: () => {
-      console.log('Comment added')
       queryClient.invalidateQueries(['comments'])
     },
   })

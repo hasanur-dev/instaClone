@@ -14,7 +14,6 @@ import Button from './Button'
 import Image from 'next/image'
 
 export default function ImageBlock({ image: { id, desc, likes, url, users } }) {
-  // console.log({ id, desc, likes, url, users })
   const queryClient = useQueryClient()
   const { likePost, isLoading } = useLikePost()
   const { user, isLoading: isLoadingUser } = useUser()
@@ -23,7 +22,6 @@ export default function ImageBlock({ image: { id, desc, likes, url, users } }) {
   const router = useRouter()
   const { allLikes, isLoading: isLoadingTotalLikes } = useGetTotalLikes(id)
   const handleLike = (e) => {
-    console.log('hi')
     likePost({ user_id: user?.user[0].id, image_id: id })
   }
 
@@ -46,12 +44,9 @@ export default function ImageBlock({ image: { id, desc, likes, url, users } }) {
   // ])
   // useRealTime(handleUpdateLikes)
   const handleChange = (payload) => {
-    console.log('Change received!', payload)
     queryClient.invalidateQueries(['like'])
   }
   useRealTime('likes', '*', 'public', 'likes', handleChange)
-
-  // console.log('liked? ', like, like?.length > 0)
 
   return (
     <div className="flex flex-col gap-3">

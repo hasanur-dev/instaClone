@@ -26,7 +26,6 @@ export default function Login() {
   }
 
   useEffect(() => {
-    console.log(isAuthenticated, isLoading)
     if (isAuthenticated && !isLoading) router.push('/home')
   }, [isAuthenticated, isLoading, router])
 

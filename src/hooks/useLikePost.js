@@ -6,7 +6,6 @@ export default function useLikePost() {
   const { mutate: likePost, isPending: isLoading } = useMutation({
     mutationFn: likePostApi,
     onSuccess: () => {
-      console.log('liked')
       queryClient.invalidateQueries(['like'])
     },
   })

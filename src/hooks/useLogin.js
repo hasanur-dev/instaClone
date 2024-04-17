@@ -14,7 +14,6 @@ export default function useLogin() {
     mutationFn: ({ email, password }) => loginApi({ email, password }),
     onSuccess: (user) => {
       router.push('/home')
-      console.log(user)
       toast.success('Login successful')
     },
   })

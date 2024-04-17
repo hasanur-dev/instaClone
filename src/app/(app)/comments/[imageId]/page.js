@@ -26,7 +26,6 @@ export default function Comments({ params }) {
   const { data, isLoading: isLoadingComments } = useGetComments(imageId)
 
   const handleCommentUpdate = (payload) => {
-    console.log(payload)
     queryClient.invalidateQueries(['comments'])
   }
 
@@ -34,7 +33,6 @@ export default function Comments({ params }) {
 
   const handleClick = (e) => {
     e.preventDefault()
-    console.log('add comment')
     if (!comment) return
     addComment(
       {
@@ -47,7 +45,7 @@ export default function Comments({ params }) {
       }
     )
   }
-  console.log(data)
+
   return (
     <div className="">
       <div className="flex gap-12">
