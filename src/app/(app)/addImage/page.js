@@ -60,7 +60,7 @@ export default function AddImage() {
   }
   return (
     <div className="mb-12 p-6 mx-4 sm:mx-0 rounded-md shadow-lg flex flex-col gap-6 items-start">
-      <Button type="secondary" onClick={() => navigate(-1)}>
+      <Button type="secondary" onClick={() => router.back()}>
         <span className="flex items-center gap-2 pr-3 py-1 ">
           <FaChevronLeft className="text-gray-500" />
           Back
