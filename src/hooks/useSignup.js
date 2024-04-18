@@ -5,7 +5,11 @@ import { useRouter } from 'next/navigation'
 
 export default function useSignup() {
   const router = useRouter()
-  const { mutate: signup, isPending: isLoading, error } = useMutation({
+  const {
+    mutate: signup,
+    isPending: isLoading,
+    error,
+  } = useMutation({
     mutationFn: signupApi,
     onSuccess: () => {
       router.push('/home')

@@ -1,7 +1,8 @@
 import { supabase } from './supabase'
 
 export const signup = async ({ email, username, password }) => {
-    if (password.length < 6)
+  console.log(password)
+  if (password.length < 6)
     throw new Error('Password should have 6 characters at least')
   let { data: userData, error: userError } = await supabase.auth.signUp({
     email,

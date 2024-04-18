@@ -1,6 +1,7 @@
 'use client'
 
 import Button from '@/components/Button'
+import Error from '@/components/Error'
 import Logo from '@/components/Logo'
 import SpinnerFullPage from '@/components/SpinnerFullPage'
 import SpinnerSmall from '@/components/SpinnerSmall'
