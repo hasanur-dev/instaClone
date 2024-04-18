@@ -20,7 +20,7 @@ import { useNavigate } from 'react-router-dom'
 // import SpinnerSmall from '../ui/SpinnerSmall'
 
 export default function Signup() {
-  const { signup, isLoading } = useSignup()
+  const { signup, isLoading, error } = useSignup()
   //   const navigate = useNavigate()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -53,7 +53,7 @@ export default function Signup() {
   if (!isAuthenticated)
     return (
       <div className="px-4 sm:px-0 text-center mt-28 grid gap-8 max-w-screen-mobile mx-auto">
-        {/* <Error /> */}
+        {error && <Error message={error.message} />}
         <Logo />
         <form className="flex flex-col gap-4">
           <input
